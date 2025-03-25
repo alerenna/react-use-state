@@ -33,16 +33,18 @@ const programmingLanguages = [
     }
 ];
 
-const [isOn, setIsOn] = useState(1)
+
 
 export default function LanguageList() {
+    const [isOn, setIsOn] = useState(1)
     return (
         <div>
             {
                 programmingLanguages.map((language) => (
                     <div className="container">
                         <Language
-                            key={(programmingLanguages.id)}
+                            key={language.id}
+                            title={language.title}
                             isOn={isOn === language.id}
                             handleOn={() => setIsOn(language.id)}
                         >
@@ -62,7 +64,7 @@ function Language({ title, isOn, handleOn, children }) {
 
         <>
             <button className="btn" onClick={handleOn}>
-                {title} <a href={'??'}></a>
+                {title}
             </button>
 
             <div className="card">
