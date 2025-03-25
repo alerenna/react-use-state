@@ -63,14 +63,16 @@ function Language({ title, isOn, handleOn, children }) {
     return (
 
         <>
-            <button className="btn" onClick={handleOn}>
+            <button className={`btn ${isOn ? 'active' : ''}`} onClick={handleOn}>
                 {title}
             </button>
 
-            <div className="card">
-                <h3>{title}</h3>
-                <span>{isOn && children}</span>
-            </div>
+            {isOn && (
+                <div className="card mt-3">
+                    <h3>{title}</h3>
+                    <p>{children}</p>
+                </div>
+            )}
         </>
 
     )

@@ -26,6 +26,11 @@ main {
       border: none;
     }
 
+    .active {
+      background-color: rgb(255, 238, 0);
+      color: black;
+    }
+
     .card {
       display: flex;
       justify-content: start;
