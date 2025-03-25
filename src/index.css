@@ -5,49 +5,56 @@
 }
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 
-  .buttons-section {
+  .languages-section {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    flex-direction: row;
 
-    .btn {
-      background-color: blue;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-      margin-left: 0.25rem;
-      margin-right: 0.25rem;
-      border: none;
-    }
-
-    .active {
-      background-color: rgb(255, 238, 0);
-      color: black;
-    }
-
-    .card {
+    .buttons-section {
       display: flex;
-      justify-content: start;
-      align-items: start;
-      flex-direction: column;
-      border: 1px solid black;
-      border-radius: 0.5rem;
-      margin-top: 2rem;
-      max-width: 750px;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
 
-      span {
-        text-align: start;
-        margin-top: 1rem;
+      .btn {
+        background-color: blue;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: none;
+      }
+
+      .active {
+        background-color: rgb(255, 238, 0);
+        color: black;
       }
     }
 
+
   }
+
+  .card {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+    max-width: 750px;
+
+    span {
+      text-align: start;
+      margin-top: 1rem;
+    }
+  }
+
+
+
+}
 
 
 }

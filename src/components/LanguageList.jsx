@@ -38,24 +38,31 @@ const programmingLanguages = [
 export default function LanguageList() {
     const [isOn, setIsOn] = useState(1)
     return (
-        <div>
-            {
-                programmingLanguages.map((language) => (
-                    <div className="container">
-                        <Language
-                            key={language.id}
-                            title={language.title}
-                            isOn={isOn === language.id}
-                            handleOn={() => setIsOn(language.id)}
-                        >
-                            {language.description}
-                        </Language>
+        <div className="flex-container">
+            <section className="buttons-section">
+                {programmingLanguages.map((language) => (
+
+                    <Language
+                        key={language.id}
+                        title={language.title}
+                        isOn={isOn === language.id}
+                        handleOn={() => setIsOn(language.id)}
+                    >
+                        {language.description}
+                    </Language>
+
+                ))}
+            </section>
+
+            {programmingLanguages.map((language) => (
+                isOn === language.id && (
+                    <div key={language.id} className="card">
+                        <h3>{language.title}</h3>
+                        <span>{language.description}</span>
                     </div>
-                ))
-            }
-        </div >
-
-
+                )
+            ))}
+        </div>
     )
 }
 
@@ -67,12 +74,6 @@ function Language({ title, isOn, handleOn, children }) {
                 {title}
             </button>
 
-            {isOn && (
-                <div className="card mt-3">
-                    <h3>{title}</h3>
-                    <p>{children}</p>
-                </div>
-            )}
         </>
 
     )
