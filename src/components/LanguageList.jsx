@@ -41,18 +41,13 @@ export default function LanguageList() {
             {
                 programmingLanguages.map((language) => (
                     <div className="container">
-                        <Button
+                        <Language
                             key={(programmingLanguages.id)}
                             isOn={isOn === language.id}
                             handleOn={() => setIsOn(language.id)}
                         >
-                            {language.title} {/* <a href={ }></a> */}
-
-                        </Button>
-                        <div className="card">
-                            <h3>{language.title}</h3>
-                            <span>{language.description}</span>
-                        </div>
+                            {language.description}
+                        </Language>
                     </div>
                 ))
             }
@@ -62,8 +57,19 @@ export default function LanguageList() {
     )
 }
 
-function Button({ title, isOn, handleOn, children }) {
+function Language({ title, isOn, handleOn, children }) {
     return (
-        <button className="btn"></button>
+
+        <>
+            <button className="btn" onClick={handleOn}>
+                {title} <a href={'??'}></a>
+            </button>
+
+            <div className="card">
+                <h3>{title}</h3>
+                <span>{isOn && children}</span>
+            </div>
+        </>
+
     )
 }
